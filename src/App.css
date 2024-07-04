@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+  --background:#ccc;
+  --grey-text::#6a6a6a;
+  --primary-color:#306BFF;
+  --light-primary:#f9faff
+}
+[dark-theme='dark']{
+  --background:#141414;
+  --grey-text:#fafafa;
+  --primary-color:#000000;
+  --light-primary:#f9faff
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+img{
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+li{
+  padding: 0;
+  margin: 0;
+}
+.page{
+  display: flex;
+}
+.section{
+  flex: 1;
+}
+nav{
+  display: inline-block;
+  position: relative;
+  height: 100vh;
+  box-shadow: 1px 0px 5px #ccc;
+  padding: 5px 0px;
+}
+nav .logo{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+nav .logo svg{
+  width: 50px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+nav li{
+  display: flex;
+}
+nav li a{
+  display: flex;
+  position: relative;
+  padding: 15px 30px;
+  color: #6a6a6a;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  transition: all 1s;
+}
+nav li a svg{
+  position: relative;
+  top: 2px;
+  margin-right: 8px;
+  font-size: 18px;
+}
+nav li a.active{
+  color: var(--primary-color);
+}
+nav li a:before{
+  content: '';
+  background-color: var(--primary-color);
+  width: 4px;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  left:0;
+  bottom: 0;
+  transition: all 0.4s;
+}
+nav li a.active:before{
+  height: 100%;
+  transform-origin: center;
+}
+nav li.active {
+  background-color: #f9faff;
+}
+nav li:hover {
+  background-color: #f9faff;
+}
+.toggle-text p {
+  display: none;
+}
+.toogle-btn{
+  position:absolute;
+  top: 90px;
+  right: -15px;
+  outline: none;
+  border: none;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-text.visible p {
+  display: block;
+}
+.toggle-text.hidden a svg{
+  margin-right: 0px;
+}
+.toogle-btn svg {
+  padding: 2px;
+}
+
+/* Dashboard */
+
+.dashboard{
+  display: flex;
+}
+.dashmain{
+  flex: 1;
+  padding: 30px 40px;
+}
+.details-box {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+h1.name-con {
+  font-size: 26px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+
+/* Right Details */
+
+.Rightdetails{
+  background-color: #fafafa;
+  display: inline-block;
+  height: 100vb;
+  padding: 30px;
+}
+
+/* dates set */
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: -5px -5px 4px rgb(188 188 188 / 10%), 5px 5px 4px rgb(176 176 176 / 10%);
+  background-color: #fff;
+  padding: 20px;
+}
+
+.month-year {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.days-container {
+  display: flex;
+  justify-content: space-around; /* Change to space-around */
+  width: 100%;
+}
+
+.dates-container {
+  display: flex;
+  justify-content: space-around; /* Change to space-around */
+  width: 100%;
+}
+
+.day, .day-name {
+  width: 40px; /* Increased width */
+  height: 40px; /* Increased height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #333;
+  background-color: transparent;
+}
+
+.day:hover, .day-name:hover {
+  background-color: #e0e0e0;
+}
+
+.day.selected {
+  color: white;
+  background-color: #546FFF;
+}
+
+.day.today, .day-name.today {
+  position: relative;
+  z-index: 3;
+  font-weight: bold;
+  border: 2px solid #546FFF;
+  color: #ffffff;
+  background-color:#546FFF ;
+}
+
+.day-name {
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.today {
+  font-weight: bold;
+  border: 2px solid #546FFF;
+  color: #4a90e2;
+  background-color: #546FFF;
+}
+
+.day-name.today:before {
+  content: '';
+  background: #546FFF;
+  position: absolute;
+  bottom: -30px;
+  left: -1px;
+  width: 109%;
+  height: 46px;
+  z-index: -1;
+}
+.day.selected.today:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  border-radius: 50%;
+  width: 86%;
+  height: 86%;
+  background: #000;
+  z-index: -1;
+}
+.day.today, .day-name.today {
+  position: relative;
+  z-index: 9;
+  font-weight: bold;
+  border: 2px solid #546FFF;
+  color: #ffffff;
+  background-color:#546FFF ;
+}
