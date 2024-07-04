@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { format, addMonths, subMonths, startOfWeek, endOfWeek, addDays, isSameDay, isToday } from 'date-fns';
-// import { MdChevronLeft } from "react-icons/md";
-// import { MdChevronRight } from "react-icons/md";
+
 
 const DatePicker = () => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -9,10 +8,8 @@ const DatePicker = () => {
   
     const renderHeader = () => {
       return (
-        <div className="month-year">
-          {/* <div className="arrow" onClick={prevMonth}><MdChevronLeft /></div> */}
+        <div className="month-year">  
           <div>{format(currentMonth, 'MMMM yyyy')}</div>
-          {/* <div className="arrow" onClick={nextMonth}><MdChevronRight /></div> */}
         </div>
       );
     };
